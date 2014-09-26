@@ -19,6 +19,12 @@ def getEnt(dict):
         ent -= proportion * log(proportion, 2)
     return ent
 
+def stat2dict(listData):
+    dict = {}
+    for i in listData:
+        dict[i] = dict.get(i, 0) + 1
+    return dict
+
 if __name__ == '__main__':
     dict = {}
     for i in range(100):
