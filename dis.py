@@ -10,8 +10,9 @@ def getMinDis(data, dataSet, n):
     n:      返回最接近的几条数据？
     返回：  排序的，由大到小的，距离数据及数据数组，数组长度小于等于n
     '''
-    dataSetSize = dataSet.shape[0]
-    diffMat = tile(data, (dataSetSize,1)) - dataSet
+    diffMat = data - dataSet
+    #dataSetSize = dataSet.shape[0]
+    #diffMat = tile(data, (dataSetSize,1)) - dataSet
     sqDiss = (diffMat**2).sum(axis=1)
     diss = sqDiss ** 0.5 
     sort = diss.argsort() 
