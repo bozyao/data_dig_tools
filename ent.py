@@ -13,7 +13,8 @@ def getEnt(dict):
     返回：  香农熵
     '''
     ent = 0.0
-    total = array(dict.values()).sum()
+    total = sum(dict.values())
+    #total = array(dict.values()).sum()
     for key in dict:
         proportion = dict[key] * 1.0 / total
         ent -= proportion * log(proportion, 2)
