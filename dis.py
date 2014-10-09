@@ -23,6 +23,17 @@ def getMinDis(data, dataSet, n):
         retData.append(dataSet[sort[i]])
     return retDiss, retData
 
+#求距离，使用余弦
+def getDis(data1, data2):
+    '''
+        data1:   准备计算记录的数据，格式为一个数组，如：[3, 7.0, 8]
+        data2:   同上
+        
+        返回：   两者之间的距离
+    '''
+    diffData = array(data1) - array(data2)
+    return sum(diffData ** 2) ** 0.5
+
 if __name__ == '__main__':
     #dataSet = random.rand(4,4)
     dataSet = array([[ 0.51256002,  0.95027049,  0.40472456,  0.66041653],
@@ -30,3 +41,5 @@ if __name__ == '__main__':
                 [ 0.17554148,  0.34825289,  0.72334947,  0.96223441],
                 [ 0.45509905,  0.77114424,  0.60491319,  0.95815854]])
     print getMinDis([0.4, 0.6, 0.5, 0.2], dataSet, 1)	
+    print getDis([0.4, 0.6, 0.5, 0.2], [ 0.87677254,  0.57921246,  0.50303306,  0.1168142 ])    
+
